@@ -1,0 +1,11 @@
+.container {
+    width: 400px;
+    margin: 20px auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+table, tr, th, td {
+    border: solid 1px;
+}
