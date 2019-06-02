@@ -12,4 +12,5 @@
 */
 
 Route::get('/', 'MasterController@index');
-Route::get('/Masters/edit', 'MasterController@edit');
+Route::get('/masters/index', 'MasterController@index');
+Route::get('/masters/edit', 'MasterController@edit');

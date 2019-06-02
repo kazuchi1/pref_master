@@ -28,12 +28,15 @@
                     <td>{{ $master->prefecture_cd }}</td>
                     <td>{{ $master->prefecture_name }}</td>
                     <td>{{ $master->update_date }}</td>
-                    <td><button type="submit" name="update" value="{{ $master->prefecture_cd }}">登録</button></td>
+                    <form method="post">
+                    <td><button type="submit" name="update" value="{{ $master->prefecture_cd }}">更新</button></td>
                     <td><button type="submit" name="delete" value="{{ $master->prefecture_cd }}">削除</button></td>
+                    </form>
                 </tr>
             @endforeach
             </tbody>
         </table>
+        <p><a href="/masters/edit">追加</a></p>
     </div>
 </body>
 </html>

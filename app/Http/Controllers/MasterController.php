@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mst_prefecture;
 use App\Master;
+
 class MasterController extends Controller
 {
     //
