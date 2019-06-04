@@ -14,4 +14,5 @@
 Route::get('/', 'MasterController@index');
 Route::get('/masters/index', 'MasterController@index');
 Route::get('/masters/edit', 'MasterController@edit');
-Route::post('/masters/confirm', 'MasterController@store');
+Route::post('/masters/confirm', 'MasterController@confirm');
+Route::post('/masters', 'MasterController@store');

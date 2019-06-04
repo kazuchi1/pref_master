@@ -19,8 +19,23 @@ class MasterController extends Controller
     public function edit() {
         return view('masters.edit');
     }
-    public function store(Request $request) {
+    public function confirm(Request $request) {
         $masters = Request::all();
         return view('masters.confirm', compact('masters'));
+    }
+
+    public function store(Request $request) {
+        $master = new Master();
+        $master->prefecture_cd = $request->prefecture_CD;
+        $master->prefecture_name = $request->prefectureName;
+        $master->insert_date = now();
+        $master->insert_cd = '01';
+        $master->update_date = 'NULL';
+        $master->update_cd = '01';
+        $master->delete_date = 'NULL';
+        $master->delete_cd = '01';
+        $master->delete_flg = '0';
+        $master->save();
+        return redirect('/');
     }
 }

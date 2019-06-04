@@ -9,8 +9,8 @@
     <div class="container">
     <p>地域マスタ登録確認</p>
     <section>
-        <form method="post" action="{{ url('/') }}">
-            {{ csrf_field() }}
+        <form method="post" action="{{ url('/masters') }}">
+            @csrf
         <p>地域コード
         <input type="hidden" name="prefecture_CD" value="{{ $masters['prefecture_CD'] }}">
         {{ $masters['prefecture_CD'] }}
