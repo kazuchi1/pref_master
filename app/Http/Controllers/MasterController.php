@@ -12,7 +12,7 @@ class MasterController extends Controller
     //
     public function index() {
         // $msts = Mst_prefecture::All();
-        $masters = Master::All();
+        $masters = Master::paginate(10);
         // dd($tests->toArray());
         return view('masters.index')->with('masters', $masters);
     }

@@ -36,6 +36,9 @@
             @endforeach
             </tbody>
         </table>
+        <div class="">
+        {{ $masters->links() }}
+        </div>
         <p><a href="/masters/edit">追加</a></p>
     </div>
 </body>
