@@ -12,10 +12,20 @@
         <form method="post" action="{{ url('/masters/confirm') }}">
             {{ csrf_field() }}
         <p>地域コード
-        <input type="text" name="prefecture_CD">
+        <input type="text" name="prefecture_CD" value="{{ old('prefecture_CD') }}">
+        </p>
+        <p>
+        @if ($errors->has('prefecture_CD'))
+        <span class="error">{{ $errors->first('prefecture_CD') }}</span>
+        @endif
         </p>
         <p>地域名
-        <input type="text" name="prefectureName">
+        <input type="text" name="prefectureName" value="{{ old('prefectureName') }}">
+        </p>
+        <p>
+        @if ($errors->has('prefectureName'))
+        <span class="error">{{ $errors->first('prefectureName') }}</span>
+        @endif
         </p>
         <button type="submit" name="btnAction" value="regist">登録</button>
         <button type="submit" name="btnBack" onclick="history.back()">戻る</button>

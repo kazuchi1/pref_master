@@ -17,7 +17,15 @@ class MasterController extends Controller
         return view('masters.edit');
     }
     public function confirm(Request $request) {
+        $request->prefecture_CD = sprintf('%02d', $request->prefecture_CD);
+        $request->prefectureName = mb_convert_kana($request->prefectureName, 'RNASKHCV', 'UTF-8');
+        // dd($request);
+        $this->validate($request, [
+            'prefecture_CD' => 'required|numeric',
+            'prefectureName' => 'required'
+        ]);
         $masters = $request->all();
+        dd($masters);
         return view('masters.confirm', compact('masters'));
     }
 
