@@ -17,19 +17,27 @@ class MasterController extends Controller
         return view('masters.edit');
     }
     public function confirm(Request $request) {
-        $request->prefecture_CD = sprintf('%02d', $request->prefecture_CD);
-        $request->prefectureName = mb_convert_kana($request->prefectureName, 'RNASKHCV', 'UTF-8');
-        // dd($request);
+        
+        $masters = $request->all();
+        if (isset($masters['prefecture_CD'])) {
+            $masters['prefecture_CD'] = sprintf('%02d', $masters['prefecture_CD']);
+        }
+        if (isset($masters['prefectureName'])) {
+            $masters['prefectureName'] = mb_convert_kana($masters['prefectureName'], 'RNASKHCV', 'UTF-8');
+        }
+        // dd($masters, $request);
+        
+
         $this->validate($request, [
-            'prefecture_CD' => 'required|numeric',
+            'prefecture_CD' => 'required|numeric|unique:masters',
             'prefectureName' => 'required'
         ]);
-        $masters = $request->all();
-        dd($masters);
+        
         return view('masters.confirm', compact('masters'));
     }
 
     public function store(Request $request) {
+        
         $master = new Master();
         $master->prefecture_cd = $request->prefecture_CD;
         $master->prefecture_name = $request->prefectureName;

@@ -13,3 +13,6 @@ table, tr, th, td {
     font-size: 12px;
     color: red;
 }
+li {
+    display:inline;
+}
