@@ -13,9 +13,11 @@ class MasterController extends Controller
         // dd($tests->toArray());
         return view('masters.index')->with('masters', $masters);
     }
+
     public function edit() {
         return view('masters.edit');
     }
+
     public function confirm(Request $request) {
         
         $masters = $request->all();
@@ -49,6 +51,13 @@ class MasterController extends Controller
         $master->delete_cd = '01';
         $master->delete_flg = '0';
         $master->save();
+        return redirect('/');
+    }
+
+    public function destroy(Request $request) {
+        // dd($request->btnDelete);
+        $master = Master::where('prefecture_cd', '$request->btnDelete')->first();
+        $master->delete();
         return redirect('/');
     }
 }

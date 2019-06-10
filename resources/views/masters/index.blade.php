@@ -28,9 +28,11 @@
                     <td>{{ $master->prefecture_cd }}</td>
                     <td>{{ $master->prefecture_name }}</td>
                     <td>{{ $master->update_date }}</td>
-                    <form method="post">
-                    <td><button type="submit" name="update" value="{{ $master->prefecture_cd }}">更新</button></td>
-                    <td><button type="submit" name="delete" value="{{ $master->prefecture_cd }}">削除</button></td>
+                    <form method="post" action="{{ url('/masters', $master->prefecture_cd) }}">
+                    @csrf
+                    {{ method_field('delete') }}
+                    <td><button type="submit" name="btnUpdate" value="{{ $master->prefecture_cd }}">更新</button></td>
+                    <td><button type="submit" name="btnDelete" value="{{ $master->prefecture_cd }}">削除</button></td>
                     </form>
                 </tr>
             @endforeach
