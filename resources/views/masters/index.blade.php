@@ -38,10 +38,12 @@
             @endforeach
             </tbody>
         </table>
-        <div class="">
-        {{ $masters->links() }}
+        <div class="move">
+            <div class="">
+            {{ $masters->links() }}
+            </div>
+            <div><a href="/masters/edit">追加</a></div>
         </div>
-        <p><a href="/masters/edit">追加</a></p>
     </div>
 </body>
 </html>

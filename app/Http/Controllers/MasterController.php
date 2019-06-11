@@ -19,7 +19,11 @@ class MasterController extends Controller
     }
 
     public function confirm(Request $request) {
-        
+        // dd($request->btnBack);
+        if ($request->btnBack === 'back') {
+            return redirect()->action('MasterController@index');
+        }
+
         $masters = $request->all();
         if (isset($masters['prefecture_CD'])) {
             $masters['prefecture_CD'] = sprintf('%02d', $masters['prefecture_CD']);
@@ -40,6 +44,7 @@ class MasterController extends Controller
 
     public function store(Request $request) {
         
+        
         $master = new Master();
         $master->prefecture_cd = $request->prefecture_CD;
         $master->prefecture_name = $request->prefectureName;
@@ -55,8 +60,7 @@ class MasterController extends Controller
     }
 
     public function destroy(Request $request) {
-        // dd($request->btnDelete);
-        $master = Master::where('prefecture_cd', '$request->btnDelete')->first();
+        $master = Master::where('prefecture_cd', $request->btnDelete)->first();
         $master->delete();
         return redirect('/');
     }
