@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="regstContainer">
     <p>地域マスタ登録</p>
         <div class="regist_form">
-            <form method="post" action="{{ url('/masters/confirm') }}">
+            <form class="formSubmit" method="post" action="{{ url('/masters/confirm') }}">
                 {{ csrf_field() }}
             <p>
             @if ($errors->has('prefecture_CD'))
@@ -33,7 +33,7 @@
             </div>
             </form>
         </div>
-    <button type="submit" name="btnBack" value="history.back()">戻る</button>
+    <button type="submit" name="btnBack" onclick="history.back()">戻る</button>
 
     
     </div>

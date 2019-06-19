@@ -1,4 +1,10 @@
 .container {
+    width: 600px;
+    margin: 20px auto;
+    border: solid 1px;
+    border-radius: 5px;
+}
+.regstContainer {
     width: 400px;
     margin: 20px auto;
     border: solid 1px;
@@ -6,6 +12,8 @@
 }
 
 table {
+    margin: 0 auto;
+    width: 500px;
     border-collapse: collapse;
 }
 table, tr, th, td {
@@ -27,4 +35,18 @@ li {
 }
 .btnSubmit {
     display:block;
+}
+.formSubmit {
+    margin:0 auto;
+}
+.search {
+    margin: 10px auto;
+    margin-top: 10px;
+    width: 500px;
+    border: solid 1px;
+    border-radius: 5px;
+}
+.formSearch {
+    margin: 5px;
+    text-align: center
 }
