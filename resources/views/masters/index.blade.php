@@ -42,7 +42,7 @@
             <div class="">
             {{ $masters->links() }}
             </div>
-            <div><a href="/masters/edit">追加</a></div>
+            <div><a class="add" href="/masters/edit">追加</a></div>
         </div>
     </div>
 </body>

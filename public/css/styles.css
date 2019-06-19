@@ -1,6 +1,8 @@
 .container {
     width: 400px;
     margin: 20px auto;
+    border: solid 1px;
+    border-radius: 5px;
 }
 
 table {
@@ -15,4 +17,14 @@ table, tr, th, td {
 }
 li {
     display:inline;
+}
+
+.regist_form {
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+}
+.btnSubmit {
+    display:block;
 }

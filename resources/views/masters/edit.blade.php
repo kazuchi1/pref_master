@@ -8,30 +8,34 @@
 <body>
     <div class="container">
     <p>地域マスタ登録</p>
-    <section>
-        <form method="post" action="{{ url('/masters/confirm') }}">
-            {{ csrf_field() }}
-        <p>
-        @if ($errors->has('prefecture_CD'))
-        <span class="error">{{ $errors->first('prefecture_CD') }}</span>
-        @endif
-        </p>
-        <p>
-        @if ($errors->has('prefectureName'))
-        <span class="error">{{ $errors->first('prefectureName') }}</span>
-        @endif
-        </p>
-        <p>地域コード
-        <input type="text" name="prefecture_CD" value="{{ old('prefecture_CD') }}">
-        </p>
-        
-        <p>地域名
-        <input type="text" name="prefectureName" value="{{ old('prefectureName') }}">
-        </p>
-        <button type="submit" name="btnAction" value="regist">登録</button>
-        <button type="submit" name="btnBack" value="back">戻る</button>
-        </form>
-    </section>
+        <div class="regist_form">
+            <form method="post" action="{{ url('/masters/confirm') }}">
+                {{ csrf_field() }}
+            <p>
+            @if ($errors->has('prefecture_CD'))
+            <span class="error">{{ $errors->first('prefecture_CD') }}</span>
+            @endif
+            </p>
+            <p>
+            @if ($errors->has('prefectureName'))
+            <span class="error">{{ $errors->first('prefectureName') }}</span>
+            @endif
+            </p>
+            <p>地域コード
+            <input type="text" name="prefecture_CD" value="{{ old('prefecture_CD') }}">
+            </p>
+            
+            <p>地域名
+            <input type="text" name="prefectureName" value="{{ old('prefectureName') }}">
+            </p>
+            <div class="btnSubmit">
+            <button type="submit" name="btnAction" value="regist">登録</button>
+            </div>
+            </form>
+        </div>
+    <button type="submit" name="btnBack" value="history.back()">戻る</button>
+
+    
     </div>
 </body>
 </html>
